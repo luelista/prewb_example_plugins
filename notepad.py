@@ -7,7 +7,6 @@ It shows a text editor which automatically stores its contents in the project da
 import logging
 
 import pre_workbench.app
-from PyQt5 import QtGui
 from PyQt5.QtWidgets import QWidget, QVBoxLayout
 from pre_workbench.controls.scintillaedit import ScintillaEdit
 from pre_workbench.typeregistry import DockWidgetTypes

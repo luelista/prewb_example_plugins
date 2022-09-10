@@ -1,6 +1,8 @@
 """
 This plugin is an example for a custom DockWidget, it displays an analog clock.
 
+Actual clock rendering is based on example code from:
+https://www.geeksforgeeks.org/create-analog-clock-using-pyqt5-in-python/
 """
 
 import logging
@@ -8,7 +10,7 @@ import logging
 import pre_workbench.app
 from PyQt5 import QtGui, QtCore
 from PyQt5.QtCore import QTimer, QPoint, QTime
-from PyQt5.QtGui import QPolygon, QPainter, QBrush, QPen
+from PyQt5.QtGui import QPolygon, QPainter, QBrush, QPen, QColor
 from PyQt5.QtWidgets import QWidget, QVBoxLayout
 from pre_workbench.controls.scintillaedit import ScintillaEdit
 from pre_workbench.typeregistry import DockWidgetTypes
@@ -37,9 +39,6 @@ class Clock(QWidget):
         # setting window geometry
         self.setGeometry(200, 200, 300, 300)
 
-        # setting background color to the window
-        self.setStyleSheet("QWidget{background : black;}")
-
         # creating hour hand
         self.hPointer = QtGui.QPolygon([QPoint(6, 7),
                                         QPoint(-6, 7),
@@ -56,10 +55,13 @@ class Clock(QWidget):
                                   QPoint(0, -90)])
         # colors
         # color for minute and hour hand
-        self.bColor = QtCore.Qt.blue
+        self.bColor = QtCore.Qt.white
 
         # color for second hand
-        self.sColor = QtCore.Qt.red
+        self.sColor = QtCore.Qt.green
+
+        # background color
+        self.bgColor = QColor("#111111")
 
     # method for paint event
     def paintEvent(self, event):
@@ -73,7 +75,7 @@ class Clock(QWidget):
 
         # creating a painter object
         painter = QPainter(self)
-
+        painter.fillRect(0, 0, self.width(), self.height(), self.bgColor)
 
         # method to draw the hands
         # argument : color rotation and which hand should be pointed
@@ -129,3 +131,4 @@ class Clock(QWidget):
 
         # ending the painter
         painter.end()
+

@@ -16,12 +16,12 @@ def highlightRainbowPlugin(editor, qp, bbuf, sel, options):
 
 	i=start
 	len=ceil((end-start+1)/6)
-	editor.highlightMatch(qp, (bufIdx, i, i+len), "", QColor("#ff0000")); i=i+len
-	editor.highlightMatch(qp, (bufIdx, i, i+len), "", QColor("#ffaa00")); i=i+len
-	editor.highlightMatch(qp, (bufIdx, i, i+len), "", QColor("#ffff00")); i=i+len
-	editor.highlightMatch(qp, (bufIdx, i, i+len), "", QColor("#00ff00")); i=i+len
-	editor.highlightMatch(qp, (bufIdx, i, i+len), "", QColor("#0000ff")); i=i+len
-	editor.highlightMatch(qp, (bufIdx, i, i+len), "", QColor("#aa00ff")); i=i+len
+	editor.highlightMatch(qp, (bufIdx, i, i+len), "Rainbow", QColor("#ff0000")); i=i+len
+	editor.highlightMatch(qp, (bufIdx, i, i+len), "Rainbow", QColor("#ffaa00")); i=i+len
+	editor.highlightMatch(qp, (bufIdx, i, i+len), "Rainbow", QColor("#ffff00")); i=i+len
+	editor.highlightMatch(qp, (bufIdx, i, i+len), "Rainbow", QColor("#00ff00")); i=i+len
+	editor.highlightMatch(qp, (bufIdx, i, i+len), "Rainbow", QColor("#0000ff")); i=i+len
+	editor.highlightMatch(qp, (bufIdx, i, i+len), "Rainbow", QColor("#aa00ff")); i=i+len
 
 
 
