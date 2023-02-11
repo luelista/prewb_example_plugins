@@ -1,5 +1,6 @@
 import binascii
 import hashlib
+import logging
 
 from pre_workbench.structinfo import ExprFunctions
 
@@ -12,7 +13,7 @@ def shex(i):
 		return "%x" % i
 
 def make_hashfun(hash_name):
-	print("Registering hash function ",hash_name)
+	logging.log(logging.TRACE, "Registering hash function %r",hash_name)
 	def hash_(val):
 		return hashlib.new(hash_name, val).digest()
 
