@@ -14,7 +14,7 @@ from pre_workbench.typeregistry import DockWidgetTypes
 from pre_workbench.util import PerfTimer
 
 
-@DockWidgetTypes.register(title="Selection Parser", icon="document-text.png", showFirstRun=True)
+@DockWidgetTypes.register(title="Selection Parser", icon="ui-scroll-pane-tree.png", showFirstRun=True)
 class SelectionParserWidget(QWidget):
 	def __init__(self):
 		super().__init__()
